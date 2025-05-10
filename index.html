@@ -1,303 +1,339 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/f-logo.png" />
-
-  <!-- Put your site title here -->
-  <title>
-    Muhammed Faris | Ethical Hacker 
-  </title>
-
-  <!-- <meta name="description" content="Add small description of yourslef."!-->
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="index.css" />
-</head> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Portfolio</title>
-  <meta name="description" content="Cybersecurity Analyst, Ethical Hacker, and Penetration Tester. Showcasing projects, CTF challenges, and security research." />
-  <meta name="keywords" content="Cybersecurity, Ethical Hacking, Penetration Testing, CTF, Security Research, Cryptography" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <title>Muhammed Faris | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #212529;
+      --card-bg: #fff;
+    }
+
+    [data-bs-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --card-bg: #1e1e1e;
+    }
+    body {
+      
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+      padding-top: 55px;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+      padding: 0.5rem 1rem;
+    }
+
+    #home {
+      height: 100vh;
+      background: url('./images/background-1.jpg') no-repeat center center/cover;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    #about {
+      padding: 60px 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    /* Skills Section */
+    #skills {
+      padding: 60px 20px;
+      background-color: var(--bg-color); /* Use root variable for background */
+      color: var(--text-color); /* Use root variable for text color */
+    }
+
+    #skills .badge {
+      background-color: var(--bg-color); /* Apply dynamic background for badges */
+    }
+
+
+
+    @media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+  }
+}
+
+    .project-card img {
+      background-color: var(--bg-color);
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-toggle {
+      border: none;
+      background: none;
+      color: var(--text-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    a {
+        color: var(--text-color);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    body, .card, .navbar, footer {
+  transition: background-color 0.4s, color 0.4s;
+    }
+
+    html {
+  scroll-behavior: smooth;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 2rem 0;
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- ***** Header ***** -->
-
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#Work" class="nav__link">Projects</a></li>
-          <li class="nav__item"><a href="#CTF&CHALLENGES" class="nav__link">CTF & Challenges</a></li>
-          <li class="nav__item"><a href="#blogs" class="nav__link">Blogs</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Muhammed Faris</a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+      </button> --> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex align-items-center">
+      <button id="darkModeToggle" class="btn-toggle me-3" title="Toggle theme">🌓</button>
+    </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Muhammed Faris</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>CERTIFIED PENETRATION TESTER | ETHICAL HACKER </p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <main role="main">
+  <!-- <button class="btn btn-secondary toggle-btn" id="darkModeToggle">Toggle Theme</button> -->
 
-    <!-- ***** Work ***** -->
+  <!-- Home Section -->
+  <!-- <section id="home">
+    <h1 class="display-4 fw-bold">Welcome to My Portfolio</h1>
+    <p class="lead">Ethical Hacker | Cybersecurity Enthusiast | Python Developer</p>
+    <a href="#about" class="btn btn-outline-light mt-3">Explore More</a>
+  </section> -->
+  <!-- Home Section -->
+<section id="home" class="text-center py-5" data-aos="fade-up">
+  <h1 class="display-4 fw-bold custom-name">Welcome to My Portfolio</h1>
+  <p class="lead mb-4">Ethical Hacker | Cybersecurity Enthusiast | Python Developer</p>
+  
+  <div class="d-flex justify-content-center gap-3">
+    <!-- Explore More Button -->
+    <a href="#about" class="btn btn-outline-light mt-3 px-4 py-2">Explore More</a>
 
-    <section class="work" id="work">
-      <div class="row">
-        <h2>My Projects</h2>
-        <div class="work__boxes">
-<!--  Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Image Encryption & Decryption </h3>
-              <p>
-                A Python-based tool with a GUI (Tkinter) for securing images.
-              </p>
-              <ul class="work__list">
-                <li>Image Encryption & Decryption Tool</li>
-                <li>Encryption & Decryption</li>
-                <li>Secure & Reversible Process</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://https://github.com/farixzz/image-encryption-decryption" target="_blank" class="link__text">
-                  Visit site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/farixzz/image-encryption-decryption" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/ency.jpg" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <!-- <div class="work__box">
-            <div class="work__text">
-              <h3>Calculator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
-            </div>
-          </div> -->
-<!-- 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Notificator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> --> 
-
-    <!-- ***** Ctf & challenges ***** -->
-
-    <section class="CTF&CHALLENGES" id="CTF&CHALLENEGS">
-      <div class="row">
-        <div class="CTF&CHALLENGES__Content">
-        <div class="CTF&CHALLENGES__text"> 
-        <h2>CTF & CHALLENEGS</h2>
-        <!-- <div class="client__logos"> -->
-          <!-- Add logos of the clients or companies you'have worked with.
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
-        </div> -->
-        <!-- TryHackMe Profile Badge -->
-        <div class="tryhackme-badge">
-          <h4>My TryHackMe Profile</h4>
-          <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1029131" style='border:none; width:100%; height:auto;'></iframe>
-          <!-- <img src="https://tryhackme-badges.s3.amazonaws.com/farizxx02.png" alt="TryHackMe Badge" style="max-width: 100%; height: auto; margin-top: 10px;" /> -->
-        </div>
-      </div>
-      </div>
-    </div>
-    </div>
-    </section>
-
-
-
-
-    <!--***** Blogs*******-->
-
-<section class="blogs" id="blogs">
-  <div class="row">
-    <h2>Cybersecurity Blogs & Quotes</h2>
-    
-    <!-- Blog 1 -->
-    <div class="blog">
-      <h3>Why Cybersecurity Matters</h3>
-      <p>Cybersecurity is not just about protection, it's about resilience. Companies like <strong>IBM Security</strong> and <strong>Palo Alto Networks</strong> stress the need for proactive defense strategies.</p>
-      <a href="https://www.ibm.com/security" target="_blank" class="btn">Read More</a>
-    </div>
-
-    <!-- Blog 2 -->
-    <div class="blog">
-      <h3>Top Threats in 2024</h3>
-      <p>With the rise of AI-driven threats, firms like <strong>FireEye</strong> and <strong>McAfee</strong> emphasize threat intelligence as a key strategy to mitigate risks.</p>
-      <a href="https://www.mcafee.com/security" target="_blank" class="btn">Read More</a>
-    </div>
-
-    <!-- Cybersecurity Quotes -->
-    <div class="quotes">
-      <h3>Quotes from Cybersecurity Experts</h3>
-      <blockquote>
-        "Cybersecurity is much more than a matter of IT." – <strong>Stephane Nappo</strong>
-      </blockquote>
-      <blockquote>
-        "If you think technology can solve your security problems, then you don’t understand the problems and you don’t understand the technology." – <strong>Bruce Schneier</strong>
-      </blockquote>
-    </div>
+    <!-- Get In Touch Button -->
+    <a href="#contact" class="btn btn-outline-light mt-3 px-4 py-2">Get In Touch</a>
   </div>
 </section>
 
-<!-- ***** About ***** -->
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About Me</h2>
-        <div class="about__content">
-          <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
-            <p>
-              Passionate and detail-oriented Vulnerability Assessment & Penetration Testing (VAPT) Analyst
-              with expertise in offensive security, ethical hacking, and cybersecurity risk management.
-              Skilled in identifying security vulnerabilities, conducting penetration testing, and ensuring robust security defenses.
-            </p>
 
-            <!-- Provide a link to your resume -->
-            <a href="assets/Farisresume.pdf" class="btn">My Resume</a>
-          </div>
-
-          <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/faris awatar.png" alt="" />
-          </div>
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-body text-body" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">About Me</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4" data-aos="zoom-in">
+          <img src="images/intro-bg.png" alt="Profile Picture" class="img-fluid rounded-circle w-75 mx-auto d-block">
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ***** Contact ***** -->
-
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          "Let's connect! Whether you have a cybersecurity challenge, a project idea, 
-          or just want to discuss the latest in ethical hacking and penetration testing, feel free to reach out.
-          I'm always open to collaborations, networking, and knowledge sharing. Drop a message, and I'll get back to you as soon as possible!"
-        </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:contact.farixz@gmail.com" class="btn">Tap Here</a>
+        <div class="col-md-8" data-aos="fade-left">
+          <p class="lead">Hello! I'm Muhammed Faris, a passionate and results-driven ethical hacker...</p>
+          <p>I have a deep interest in offensive security, tool development in Python, and real-world cyber threats...</p>
+          <p>Currently certified in penetration testing, with hands-on experience in web, network, and system security.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ***** Footer ***** -->
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row g-4">
+        <!-- Repeat for each project -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card project-card h-100">
+            <img src="./images/image encryption.jpg" class="card-img-top" alt="Image Encryption">
+            <div class="card-body">
+              <h5 class="card-title">Image Encryption</h5>
+              <p class="card-text">Secure image encryption/decryption tool using Python and Tkinter.</p>
+              <a href="https://github.com/farixzz/image-encryption-decryption" class="btn btn-outline-primary" rel="noopener noreferrer">View Project</a>
+            </div>
+          </div>
+        </div>
 
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://x.com/x_Fariiz" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://github.com/farixzz" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-        <!-- <li class="footer__social-link-item">
-          <a href="https://wa.me/917012131600" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" title="chat me on whatsapp" class="footer__social-image" alt="WhatsApp" >
-        </a> -->
-        
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/muhammed-faris-p/>
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
-      </ul>
-      
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card project-card h-100">
+            <img src="./images/doctorai.jpg" class="card-img-top" alt="AI Disease Prediction">
+            <div class="card-body">
+              <h5 class="card-title">AI Disease Prediction</h5>
+              <p class="card-text">AI-driven prediction of diseases using symptom-based input.</p>
+              <a href="#" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card project-card h-100">
+            <img src="./images/aitool.jpeg" class="card-img-top" alt="AI Scanning Tool">
+            <div class="card-body">
+              <h5 class="card-title">AI Scanning Tool</h5>
+              <p class="card-text">AI-based vulnerability scanner for web apps and systems.</p>
+              <a href="#" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card project-card h-100">
+            <img src="./images/iotwater.png" class="card-img-top" alt="IoT Motor Pump">
+            <div class="card-body">
+              <h5 class="card-title">Motor Pump IoT</h5>
+              <p class="card-text">ESP8266 & Blynk-based smart motor control with temp/humidity.</p>
+              <a href="#" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-down" data-aos-delay="500">
+          <div class="card project-card h-100">
+            <img src="./images/maglevtrain.jpeg" class="card-img-top" alt="Maglev Train Simulation">
+            <div class="card-body">
+              <h5 class="card-title">Maglev Train Simulation</h5>
+              <p class="card-text">Interactive 2D Maglev simulation using OpenGL & GLUT.</p>
+              <a href="#" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+<section id="skills" class="py-5 bg-body text-body" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-4">Skills</h2>
+    <div class="row text-center">
+      <!-- Offensive Security -->
+      <div class="col-md-4 mb-4" data-aos="fade-down" data-aos-delay="150">
+        <i class="fas fa-user-secret fa-3x mb-2"></i>
+        <h5>Offensive Security</h5>
+        <span class="badge bg-success" title="Web App Pentesting">Web Pentest</span>
+        <span class="badge bg-info text-dark" title="Network and infrastructure testing">Network Pentest</span>
+        <span class="badge bg-warning text-dark" title="Exploit Development">Exploit Dev</span>
+      </div>
+
+      <!-- Programming -->
+      <div class="col-md-4 mb-4">
+        <i class="fas fa-code fa-3x mb-2" data-aos="fade-down" data-aos-delay="250"></i>
+        <h5>Programming</h5>
+        <span class="badge bg-primary" title="Python Scripting & Automation">Python</span>
+        <span class="badge bg-secondary" title="Low-level Programming">C/C++</span>
+        <span class="badge bg-danger" title="Web Development Scripting">JavaScript</span>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="col-md-4 mb-4">
+        <i class="fas fa-tools fa-3x mb-2" data-aos="fade-down" data-aos-delay="350"></i>
+        <h5>Tools & Platforms</h5>
+        <span class="badge bg-light text-dark" title="Kali Linux OS">Kali Linux</span>
+        <span class="badge bg-dark" title="Burp Suite for Web Security">Burp Suite</span>
+        <span class="badge bg-success" title="SIEM Tools, Log Analysis">SOC Tools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="bg-body text-body py-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="mb-4">Resume</h2>
+      <a href="./assets/Farisresume.pdf" class="btn btn-outline-info" download><i class="fas fa-download"></i> Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Me</h2>
+      <form action="https://formspree.io/f/mqaqlrkd" method="POST" class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <p class="mb-2">Connect with me:</p>
+    <a href="https://github.com/farixzz" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://www.linkedin.com/in/muhammed-faris-p/" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a>
+    <p class="mt-3">&copy; 2025 Muhammed Faris. All Rights Reserved.</p>
   </footer>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-bs-theme');
+      html.setAttribute('data-bs-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
 
+  <!-- AOS Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease' ,
+    once: false
+  });
+</script>
+
+
+</body>
 </html>
