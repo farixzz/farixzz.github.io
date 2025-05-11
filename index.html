@@ -12,6 +12,7 @@
   <!-- AOS Animation Library -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
   <style>
     :root {
@@ -132,6 +133,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
@@ -151,7 +153,10 @@
   </section> -->
   <!-- Home Section -->
 <section id="home" class="text-center py-5" data-aos="fade-up">
-  <h1 class="display-4 fw-bold custom-name">Welcome to My Portfolio</h1>
+  <h1 class="display-4 fw-bold custom-name">
+    <span class="hello">Hello,</span>
+    <span class="name">I'm Muhammed Faris</span> 
+  </h1>
   <p class="lead mb-4">Ethical Hacker | Cybersecurity Enthusiast | Python Developer</p>
   
   <div class="d-flex justify-content-center gap-3">
@@ -181,6 +186,125 @@
     </div>
   </section>
 
+<!-- Portfolio Section -->
+<section class="bg-grey py-5" id="portfolio">
+  <div class="container py-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="text-uppercase text-primary fw-bold mb-2">Portfolio</h2>
+      <h3 class="fw-bold">Tools & Projects I Use for Ethical Hacking</h3>
+    </div>
+
+    <!-- Custom CSS -->
+    <style>
+    .project-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card img {
+        height: 250px;
+        object-fit: fill;
+        width: 100%;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.1);
+        filter: brightness(40%);
+      }
+
+      .project-card .project-content {
+        padding: 15px;
+        background-color: var(--bg-color);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .project-card:hover .project-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-content h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--text-color);
+      }
+
+      .project-content p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+    </style>
+
+    <!-- Projects Grid -->
+    <div class="row g-4 justify-content-center">
+      <!-- Example Project Card -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="project-card">
+          <img src="./images/openvas_.jpg" alt="Acunetix">
+          <div class="project-content">
+            <h5>OpenVas</h5>
+            <p>Used for scanning websites to find vulnerabilities and helping secure them with suggestions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burp Suite -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="project-card">
+          <img src="./images/project-burpsuite.webp" alt="Burp Suite">
+          <div class="project-content">
+            <h5>Burp Suite</h5>
+            <p>I use Burp Suite for detecting vulnerabilities like SQLi, SSRF, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wireshark -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="project-card">
+          <img src="./images/project-wireshark.webp" alt="Wireshark">
+          <div class="project-content">
+            <h5>Wireshark</h5>
+            <p>I use Wireshark to analyse incoming network traffic and investigate handshake packets.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nmap -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="project-card">
+          <img src="./images/project-nmap.webp" alt="Nmap">
+          <div class="project-content">
+            <h5>Nmap</h5>
+            <p>I use Nmap to analyse server ports and inform owners about open ports that can be exploited.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQLMap -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="project-card">
+          <img src="./images/project-sqlmap.webp" alt="SQLMap">
+          <div class="project-content">
+            <h5>SQLMap</h5>
+            <p>I use SQLMap to retrieve database and admin panel info of SQL-enabled websites.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   <!-- Projects Section -->
   <section id="projects" class="py-5">
     <div class="container">
@@ -191,7 +315,7 @@
           <div class="card project-card h-100">
             <img src="./images/image encryption.jpg" class="card-img-top" alt="Image Encryption">
             <div class="card-body">
-              <h5 class="card-title">Image Encryption</h5>
+              <h5 class="card-title">Image Encryption and Decryption</h5>
               <p class="card-text">Secure image encryption/decryption tool using Python and Tkinter.</p>
               <a href="https://github.com/farixzz/image-encryption-decryption" class="btn btn-outline-primary" rel="noopener noreferrer">View Project</a>
             </div>
@@ -202,7 +326,7 @@
           <div class="card project-card h-100">
             <img src="./images/doctorai.jpg" class="card-img-top" alt="AI Disease Prediction">
             <div class="card-body">
-              <h5 class="card-title">AI Disease Prediction</h5>
+              <h5 class="card-title">DoctorAi </h5>
               <p class="card-text">AI-driven prediction of diseases using symptom-based input.</p>
               <a href="#" class="btn btn-outline-primary">View Project</a>
             </div>
@@ -224,7 +348,7 @@
           <div class="card project-card h-100">
             <img src="./images/iotwater.png" class="card-img-top" alt="IoT Motor Pump">
             <div class="card-body">
-              <h5 class="card-title">Motor Pump IoT</h5>
+              <h5 class="card-title">Automatic Plant watering and Monitoring system</h5>
               <p class="card-text">ESP8266 & Blynk-based smart motor control with temp/humidity.</p>
               <a href="#" class="btn btn-outline-primary">View Project</a>
             </div>
@@ -235,9 +359,9 @@
           <div class="card project-card h-100">
             <img src="./images/maglevtrain.jpeg" class="card-img-top" alt="Maglev Train Simulation">
             <div class="card-body">
-              <h5 class="card-title">Maglev Train Simulation</h5>
+              <h5 class="card-title">Maglev Train Simulation using openGL</h5>
               <p class="card-text">Interactive 2D Maglev simulation using OpenGL & GLUT.</p>
-              <a href="#" class="btn btn-outline-primary">View Project</a>
+              <a href="https://github.com/farixzz/Maglev-Train-simulation-using-openGL" class="btn btn-outline-primary">View Project</a>
             </div>
           </div>
         </div>
@@ -246,14 +370,15 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+ <!-- Skills Section -->
 <section id="skills" class="py-5 bg-body text-body" data-aos="fade-up">
   <div class="container">
     <h2 class="text-center mb-4">Skills</h2>
     <div class="row text-center">
+
       <!-- Offensive Security -->
-      <div class="col-md-4 mb-4" data-aos="fade-down" data-aos-delay="150">
-        <i class="fas fa-user-secret fa-3x mb-2"></i>
+      <div class="col-md-4 mb-4" data-aos="fade-down" data-bs-toggle="tooltip" data-bs-placement="top" title="Click for more info">
+        <i class="fas fa-user-secret fa-3x mb-2" data-bs-toggle="modal" data-bs-target="#offensiveModal"></i>
         <h5>Offensive Security</h5>
         <span class="badge bg-success" title="Web App Pentesting">Web Pentest</span>
         <span class="badge bg-info text-dark" title="Network and infrastructure testing">Network Pentest</span>
@@ -261,8 +386,8 @@
       </div>
 
       <!-- Programming -->
-      <div class="col-md-4 mb-4">
-        <i class="fas fa-code fa-3x mb-2" data-aos="fade-down" data-aos-delay="250"></i>
+      <div class="col-md-4 mb-4" data-aos="fade-down" data-bs-delay="250" data-bs-toggle="tooltip" data-bs-placement="top" title="Click for more info">
+        <i class="fas fa-code fa-3x mb-2" data-bs-toggle="modal" data-bs-target="#programmingModal"></i>
         <h5>Programming</h5>
         <span class="badge bg-primary" title="Python Scripting & Automation">Python</span>
         <span class="badge bg-secondary" title="Low-level Programming">C/C++</span>
@@ -270,51 +395,281 @@
       </div>
 
       <!-- Tools & Technologies -->
-      <div class="col-md-4 mb-4">
-        <i class="fas fa-tools fa-3x mb-2" data-aos="fade-down" data-aos-delay="350"></i>
+      <div class="col-md-4 mb-4" data-aos="fade-down" data-bs-delay="350" data-bs-toggle="tooltip" data-bs-placement="top" title="Click for more info">
+        <i class="fas fa-tools fa-3x mb-2" data-bs-toggle="modal" data-bs-target="#toolsModal"></i>
         <h5>Tools & Platforms</h5>
         <span class="badge bg-light text-dark" title="Kali Linux OS">Kali Linux</span>
         <span class="badge bg-dark" title="Burp Suite for Web Security">Burp Suite</span>
         <span class="badge bg-success" title="SIEM Tools, Log Analysis">SOC Tools</span>
       </div>
+
     </div>
   </div>
 </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="bg-body text-body py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="mb-4">Resume</h2>
-      <a href="./assets/Farisresume.pdf" class="btn btn-outline-info" download><i class="fas fa-download"></i> Download Resume</a>
+<!-- Modals -->
+<div class="modal fade" id="offensiveModal" tabindex="-1" aria-labelledby="offensiveModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="offensiveModalLabel">Offensive Security</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>I specialize in offensive security methodologies including web and network pentesting, as well as exploit development. My toolkit includes Burp Suite, SQLMap, Metasploit, and custom scripts.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5" data-aos="fade-up">
-    <div class="container">
-      <h2 class="text-center mb-4">Contact Me</h2>
-      <form action="https://formspree.io/f/mqaqlrkd" method="POST" class="mx-auto" style="max-width: 600px;">
-        <div class="mb-3">
+<div class="modal fade" id="programmingModal" tabindex="-1" aria-labelledby="programmingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="programmingModalLabel">Programming</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Proficient in Python for automation and scripting, C/C++ for system-level programming, and JavaScript for web-based scripting. Also experienced in developing custom exploits and tools for red teaming operations.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="toolsModal" tabindex="-1" aria-labelledby="toolsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="toolsModalLabel">Tools & Platforms</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Experienced in tools and platforms such as Kali Linux for security testing, Burp Suite for web app security assessments, and SOC tools for log monitoring and incident detection in enterprise environments.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Initialize Bootstrap Tooltips -->
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(tooltip => new bootstrap.Tooltip(tooltip));
+</script>
+
+
+<!-- Resume Section -->
+<section id="resume" class="bg-dark text-white py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="mb-3 fs-3 fw-bold">
+      <i class="fas fa-file-alt text-info me-2"></i>Resume
+    </h2>
+    <p class="mb-4">Click below to preview or download my resume.</p>
+
+    <!-- View Resume Button (Triggers Modal) -->
+    <button type="button" class="btn btn-info btn-lg me-3" data-bs-toggle="modal" data-bs-target="#resumeModal">
+      <i class="fas fa-eye me-1"></i> View Resume
+    </button>
+
+    <!-- Download Resume Button -->
+    <a href="./assets/Farisresume.pdf" class="btn btn-outline-light btn-lg" download>
+      <i class="fas fa-download me-1"></i> Download
+    </a>
+  </div>
+
+  <!-- Floating Icon for Style -->
+  <div class="text-center mt-5">
+    <i class="fas fa-id-card fa-4x text-secondary opacity-25 hover-opacity-100 transition-all"></i>
+  </div>
+</section>
+
+<!-- Resume Modal -->
+<div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="resumeModalLabel"><i class="fas fa-file-alt me-2"></i>Resume Preview</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="./assets/Farisresume.pdf" width="100%" height="600px" style="border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hover Effect Style -->
+<style>
+  .hover-opacity-100:hover {
+    opacity: 1 !important;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+</style>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-body text-body" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-5"><i class="fas fa-envelope-open-text me-2 text-success"></i>Contact Me</h2>
+
+    <div class="card mx-auto p-4 shadow-lg border-0 bg-secondary bg-opacity-10" style="max-width: 700px;">
+      <form action="https://formspree.io/f/mqaqlrkd" method="POST">
+        <div class="mb-3 input-group">
+          <span class="input-group-text bg-success text-white"><i class="fas fa-user"></i></span>
           <input type="text" name="name" class="form-control" placeholder="Your Name" required>
         </div>
-        <div class="mb-3">
+
+        <div class="mb-3 input-group">
+          <span class="input-group-text bg-success text-white"><i class="fas fa-envelope"></i></span>
           <input type="email" name="email" class="form-control" placeholder="Your Email" required>
         </div>
-        <div class="mb-3">
+
+        <div class="mb-3 input-group">
+          <span class="input-group-text bg-success text-white"><i class="fas fa-comment-dots"></i></span>
           <textarea name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-success w-100">Send Message</button>
+
+        <button type="submit" class="btn btn-success w-100 glow-btn">
+          <i class="fas fa-paper-plane me-1"></i>Send Message
+        </button>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="text-center">
-    <p class="mb-2">Connect with me:</p>
-    <a href="https://github.com/farixzz" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fab fa-github fa-lg"></i></a>
-    <a href="https://www.linkedin.com/in/muhammed-faris-p/" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a>
-    <p class="mt-3">&copy; 2025 Muhammed Faris. All Rights Reserved.</p>
-  </footer>
+<!-- Optional Glow Button Hover Effect -->
+<style>
+  .glow-btn {
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s;
+  }
+  .glow-btn:hover {
+    box-shadow: 0 0 15px rgba(72, 239, 159, 0.7), 0 0 30px rgba(72, 239, 159, 0.5);
+    transform: translateY(-2px);
+  }
+</style>
+
+
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="accordion accordion-flush d-md-none mb-4" id="footerAccordion">
+      <!-- About Accordion -->
+      <div class="accordion-item bg-dark text-white">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-dark text-success fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#aboutCollapse">
+            About
+          </button>
+        </h2>
+        <div id="aboutCollapse" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+          <div class="accordion-body">
+            I'm Muhammed Faris, a Cybersecurity Analyst and Ethical Hacker passionate about offensive security, automation, and risk management.
+            <div class="mt-3">
+              <a href="https://github.com/farixzz" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+              <a href="https://www.linkedin.com/in/muhammed-faris-p/" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+              <a href="https://twitter.com/yourusername" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Accordion -->
+      <div class="accordion-item bg-dark text-white">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-dark text-success fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse">
+            Menu
+          </button>
+        </h2>
+        <div id="menuCollapse" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li><a href="#home" class="footer-link">Home</a></li>
+              <li><a href="#skills" class="footer-link">Skills</a></li>
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+              <li><a href="#resume" class="footer-link">Resume</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources Accordion -->
+      <div class="accordion-item bg-dark text-white">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-dark text-success fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#resourcesCollapse">
+            Resources
+          </button>
+        </h2>
+        <div id="resourcesCollapse" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li><a href="./assets/certificates/CEH-Certificate.pdf" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>CEH Certificate</a></li>
+              <li><a href="./assets/certificates/OSCP-Certificate.pdf" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>OSCP Certificate</a></li>
+              <li><a href="./assets/certificates/TryHackMe-Badge.pdf" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>TryHackMe Badge</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop View -->
+    <div class="row d-none d-md-flex">
+      <div class="col-md-4 mb-4">
+        <h5 class="text-success fw-bold">Muhammed Faris</h5>
+        <!-- <p>I'm Muhammed Faris, a Cybersecurity Analyst and Ethical Hacker passionate about offensive security, automation, and risk management.</p> -->
+        <div class="mt-3">
+          <a href="https://github.com/farixzz" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+          <a href="https://www.linkedin.com/in/muhammed-faris-p/" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://twitter.com/yourusername" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-success fw-bold">Menu</h5>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#skills" class="footer-link">Skills</a></li>
+          <li><a href="#projects" class="footer-link">Projects</a></li>
+          <li><a href="#resume" class="footer-link">Resume</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-success fw-bold">Resources</h5>
+        <ul class="list-unstyled">
+          <li><a href="./assets/certificates/RedTeam-CPT-Certificate (1).pdf" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>CPT Certificate</a></li>
+          <li><a href="./assets/certificates/Ethical Hacker.pdf" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>Ethical Hacker Certificate</a></li>
+          <li><a href="url()" img src="https://tryhackme-badges.s3.amazonaws.com/farizxx02.png" alt="Your Image Badge" target="_blank" class="footer-link"><i class="fas fa-certificate me-2"></i>TryHackMe Badge</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <hr class="bg-light">
+    <p class="text-center mb-0">&copy; 2025 Muhammed Faris. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer-link {
+  color: #bbb;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #00ffd1;
+  text-decoration: underline;
+  padding-left: 5px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #00ffd1;
+  background-color: #111;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+</style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
