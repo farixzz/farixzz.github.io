@@ -36,12 +36,25 @@
       scroll-behavior: smooth;
       padding-top: 55px;
     }
+    .navbar {
+        background-color: rgba(18, 18, 18, 0.5) !important; /* semi-transparent */
+        backdrop-filter: blur(10px); /* blur for glass effect */
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+      }
 
-    .navbar-brand,
+    .nav-link.active {
+      color: #00ffe1 !important;
+      font-weight: 600;
+      border-bottom: 2px solid #00ffe1;
+    }
+
+  /* .navbar-brand,
     .nav-link {
       color: #fff !important;
       padding: 0.5rem 1rem;
-    }
+    }*/
 
     #home {
       height: 100vh;
@@ -53,6 +66,20 @@
       text-align: center;
       flex-direction: column;
     }
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05); /* More transparent */
+      border-radius: 16px;
+      backdrop-filter: blur(4px); /* Less blur */
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* Elegant soft shadow */
+      padding: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+
 
     #about {
       padding: 60px 20px;
@@ -115,6 +142,93 @@
       color: #ccc;
       padding: 2rem 0;
     }
+
+  /* Toggle Switch Container */
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Switch Styling */
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* Track */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #333;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: transform 0.4s;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* When checked */
+  input:checked + .slider {
+    background-color: #00ffe1;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  /* Optional icon fade/shift */
+  .slider .icon {
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  .slider .sun {
+    opacity: 1;
+  }
+
+  input:checked + .slider .sun {
+    opacity: 0.2;
+  }
+
+  input:checked + .slider .moon {
+    opacity: 1;
+  }
+
+  .slider .moon {
+    opacity: 0.2;
+  }
+
+
   </style>
 </head>
 
@@ -131,7 +245,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="d-flex align-items-center">
-      <button id="darkModeToggle" class="btn-toggle me-3" title="Toggle theme">🌓</button>
+      <!-- <button id="darkModeToggle" class="btn-toggle me-3" title="Toggle theme">🌓</button> -->
+      <div class="theme-switch-wrapper me-3">
+        <label class="theme-switch" for="darkModeToggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider round">
+            <span class="icon sun">🌞</span>
+            <span class="icon moon">🌙</span>
+          </span>
+        </label>
+      </div>
+
     </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -157,18 +281,21 @@
   </section> -->
   <!-- Home Section -->
 <section id="home" class="text-center py-5" data-aos="fade-up">
-  <h1 class="display-4 fw-bold custom-name">
-    <span class="hello">Hello,</span>
-    <span class="name">I'm Muhammed Faris</span>
-  </h1>
-  <p class="lead mb-4">Certified Ethical Hacker v13-Ai | Cybersecurity Enthusiast | Python Developer | Front-end Developer</p>
+  <div class="glass-box p-4 rounded">
+    <h1 class="display-4 fw-bold custom-name">
+      <span class="hello">Hello,</span>
+      <span class="name">I'm Muhammed Faris</span>
+    </h1>
+    <p class="lead mb-4">Certified Ethical Hacker v13-Ai | Cybersecurity Enthusiast | Python Developer | </p>
+    <p class="lead mb-4">Front-end Developer</p> 
   
-  <div class="d-flex justify-content-center gap-3">
+    <div class="d-flex justify-content-center gap-3">
     <!-- Explore More Button -->
-    <a href="#about" class="btn btn-outline-light mt-3 px-4 py-2">Explore More</a>
+      <a href="#about" class="btn btn-outline-light mt-3 px-4 py-2">Explore More</a>
 
-    <!-- Get In Touch Button -->
-    <a href="#contact" class="btn btn-outline-light mt-3 px-4 py-2">Get In Touch</a>
+      <!-- Get In Touch Button -->
+      <a href="#contact" class="btn btn-outline-light mt-3 px-4 py-2">Get In Touch</a>
+    </div>
   </div>
 </section>
 
@@ -552,7 +679,8 @@
   }
 </style>
 
-<!-- Cybersecurity News & Insights Section -->
+<!-- Cybersecurity news and insights -->
+
 <section id="cyber-news" class="py-5 bg-body text-light" data-aos="fade-up">
   <div class="container">
     <h2 class="text-center mb-4 text-accent">🧠 Cybersecurity News & Insights</h2>
@@ -573,7 +701,6 @@
   </div>
 </section>
 
-<!-- Styles -->
 <style>
   .text-accent {
     color: #00ffe1;
@@ -586,22 +713,13 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+    padding: 1rem;
+    height: 100%;
   }
 
   .news-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  }
-
-  .news-image {
-    height: 180px;
-    object-fit: cover;
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.05);
-  }
-
-  .news-content {
-    padding: 1rem;
   }
 
   .news-title {
@@ -636,13 +754,11 @@
   }
 
   .badge.bg-opacity-100 {
-  box-shadow: 0 0 10px #00ffe1;
-  transform: scale(1.05);
-}
-
+    box-shadow: 0 0 10px #00ffe1;
+    transform: scale(1.05);
+  }
 </style>
 
-<!-- Script to Fetch RSS News -->
 <script>
   const categoryKeywords = {
     Web: ['web', 'xss', 'csrf', 'sql', 'browser'],
@@ -652,7 +768,6 @@
   };
 
   fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/TheHackersNews')
-  //https://feeds.feedburner.com/TheHackersNews
     .then(response => response.json())
     .then(data => {
       const newsGrid = document.getElementById('news-grid');
@@ -670,22 +785,15 @@
 
         if (tags.length === 0) tags.push('All');
 
-        // Extract the first image from the content
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(item.content, 'text/html');
-        const imgTag = doc.querySelector('img');
-        const image = imgTag ? imgTag.src : 'https://via.placeholder.com/400x200?text=Cyber+News'; 
-
         const col = document.createElement('div');
         col.className = `col-md-6 col-lg-4 mb-4 news-item`;
         col.dataset.tags = tags.join(',');
 
         col.innerHTML = `
           <div class="news-card h-100 d-flex flex-column justify-content-between">
-            <img src="${image}" alt="${item.title}" class="news-image">
             <div class="news-content">
               <h5 class="news-title">${item.title}</h5>
-              <p class="news-description">${item.description.replace(/<[^>]+>/g, '').slice(0, 100)}...</p>
+              <p class="news-description">${item.description.replace(/<[^>]+>/g, '').slice(0, 180)}...</p>
               <a href="${item.link}" target="_blank" class="read-more-btn">Read More</a>
             </div>
           </div>
@@ -694,7 +802,6 @@
       });
     });
 
-  // Filtering Logic
   document.querySelectorAll('.badge').forEach(badge => {
     badge.addEventListener('click', () => {
       const selected = badge.textContent.trim();
@@ -712,6 +819,7 @@
     });
   });
 </script>
+
 
 
 
@@ -841,13 +949,31 @@
 </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+  <!-- <script>
     document.getElementById('darkModeToggle').addEventListener('click', function () {
       const html = document.documentElement;
       const currentTheme = html.getAttribute('data-bs-theme');
       html.setAttribute('data-bs-theme', currentTheme === 'dark' ? 'light' : 'dark');
     });
-  </script>
+  </script> -->
+  <script>
+    const toggleSwitch = document.getElementById('darkModeToggle');
+
+    // Load previous theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      toggleSwitch.checked = savedTheme === 'dark';
+    }
+
+    toggleSwitch.addEventListener('change', () => {
+      const isDark = toggleSwitch.checked;
+      const newTheme = isDark ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Save preference
+    });
+
+</script>
 
   <!-- AOS Script -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -864,6 +990,7 @@
   type="module"
 ></script>
 
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
 
 </body>
