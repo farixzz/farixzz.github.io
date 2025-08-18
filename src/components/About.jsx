@@ -34,12 +34,20 @@ const About = () => {
       <div className="grid md:grid-cols-3 gap-8">
         {/* Left Column: Profile Picture & Status */}
         <div className="md:col-span-1 flex flex-col items-center">
-          <div className="p-2 border-2 border-gray-700 hover:border-green-500 transition-colors duration-300" style={{ clipPath: 'polygon(0 10%, 100% 0, 100% 90%, 0 100%)' }}>
-            <img 
-              src={profilePic} 
-              alt="Operator Farixzz" 
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-            />
+                    {/* --- THIS IS THE NEW HEXAGONAL FRAME --- */}
+          <div className="relative w-56 h-64 flex items-center justify-center">
+            {/* The glowing hexagonal border (pseudo-element) */}
+            <div className="absolute w-full h-full bg-green-500 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-pulse"></div>
+            {/* The container that clips the image */}
+            <div 
+              className="relative w-[214px] h-[246px] bg-gray-900 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)]"
+            >
+              <img 
+                src={profilePic} 
+                alt="Operator Farixzz"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
           </div>
           <div className="mt-4 text-center w-full p-2 bg-gray-900 border border-gray-700">
             <p className="text-lg text-green-400 font-bold tracking-widest">STATUS: ACTIVE</p>
