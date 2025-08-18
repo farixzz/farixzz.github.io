@@ -84,17 +84,18 @@ const Skills = () => {
               {category.skills.map((skill) => (
                 <div
                   key={skill.name}
+                  tabIndex="0"
                   className="relative p-4 bg-gray-900 border-2 border-gray-700 rounded-lg flex flex-col items-center justify-center transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 group overflow-hidden h-32 glitch-hover"
                 >
                 
-                  <div className="flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
                     {skill.icon}
                     <p className="mt-3 font-semibold text-gray-300 text-sm md:text-base">
                       {skill.name}
                     </p>
                   </div>
                   
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
                     <ul className="text-center text-xs sm:text-sm text-gray-300 leading-tight">
                       {skill.details.map((detail) => (
                         <li key={detail}>{detail}</li>
