@@ -7,18 +7,19 @@ const News = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+      const apiKey = import.meta.env.VITE_GNEWS_API_KEY;
       if (!apiKey) {
-        setError('News API key is missing. Please add it to your .env file.');
+        setError('GNews API key is missing. Please add it to your GitHub Secrets.');
         setLoading(false);
         return;
       }
       
-      const url = `https://newsapi.org/v2/everything?q=cybersecurity&language=en&sortBy=publishedAt&pageSize=6&apiKey=${apiKey}`;
+      const url = `https://gnews.io/api/v4/search?q=cybersecurity&lang=en&max=6&apikey=${apiKey}`;
 
       try {
         const response = await fetch(url);
         if (!response.ok) {
+          const errorData = await response.json();
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
