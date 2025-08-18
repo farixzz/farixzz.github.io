@@ -28,7 +28,7 @@ const About = () => {
     <div id="about" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16">
       {/* Section Header */}
       <h1 className="text-4xl font-bold text-center text-[#00ff00] font-mono pb-12">
-        [ OPERATOR PROFILE: FARIXXZ ]
+        [ Cybersecurity Engineer: Muhammed Faris ]
       </h1>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -44,7 +44,7 @@ const About = () => {
             >
               <img 
                 src={profilePic} 
-                alt="Operator Farixzz"
+                alt="Muhammed Faris - Cybersecurity Engineer"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
