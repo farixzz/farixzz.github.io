@@ -1,5 +1,6 @@
 import React from 'react';
-import profilePic from '../assets/profile.jpg'; 
+import profilePic from '../assets/profile.jpg';
+import anonymousPic from '../assets/anonymous.jpg'; 
 import { FaShieldAlt, FaCode, FaBug, FaProjectDiagram, FaFileDownload } from 'react-icons/fa';
 import { MdOutlineContactSupport } from 'react-icons/md';
 
@@ -24,6 +25,8 @@ const coreAttributes = [
 ];
 
 const About = () => {
+  const anonymousImageUrl = `url(${anonymousPic})`;
+  const profileImageUrl = `url(${profilePic})`;
   return (
     <div id="about" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16">
       {/* Section Header */}
@@ -34,19 +37,18 @@ const About = () => {
       <div className="grid md:grid-cols-3 gap-8">
         {/* Left Column: Profile Picture & Status */}
         <div className="md:col-span-1 flex flex-col items-center">
-                    {/* --- THIS IS THE NEW HEXAGONAL FRAME --- */}
+           {/* --- THIS IS THE NEW REVEAL GLITCH FRAME --- */}
           <div className="relative w-56 h-64 flex items-center justify-center">
-            {/* The glowing hexagonal border (pseudo-element) */}
-            <div className="absolute w-full h-full bg-green-500 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-pulse"></div>
-            {/* The container that clips the image */}
-            <div 
-              className="relative w-[214px] h-[246px] bg-gray-900 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)]"
+            <div
+              className="w-full h-full bg-cover bg-center"
+              style={{
+                // Pass the image URLs as CSS variables to the animation
+                '--bg-image-anon': anonymousImageUrl,
+                '--bg-image-profile': profileImageUrl,
+                animation: 'backgroundImageGlitch 8s infinite steps(1, end)',
+                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+              }}
             >
-              <img 
-                src={profilePic} 
-                alt="Muhammed Faris - Cybersecurity Engineer"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              />
             </div>
           </div>
           <div className="mt-4 text-center w-full p-2 bg-gray-900 border border-gray-700">
