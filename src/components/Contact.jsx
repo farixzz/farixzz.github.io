@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const socialLinks = [
@@ -14,9 +14,9 @@ const socialLinks = [
     url: 'https://www.linkedin.com/in/muhammed-faris-p/',
   },
   {
-    name: 'Instagram',
-    icon: <FaInstagram size={40} />,
-    url: 'https://www.instagram.com/f_a_r_i_x_z_/',
+    name: 'Medium',
+    icon: <FaMedium size={40} />,
+    url: 'https://medium.com/@muhammedfaris654', // Your Medium profile URL
   },
   {
     name: 'Email',
