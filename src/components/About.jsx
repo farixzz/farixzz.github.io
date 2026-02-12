@@ -77,8 +77,9 @@ const About = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a 
-              href="/Faris_Resume.pdf"
-              download="Faris_Resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1EKDDR_lvlsIjOwD8RImzLU5QicWe0w0V"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center bg-[#00ff00] text-black font-bold text-sm py-2 px-4 border-2 border-green-500 hover:bg-green-700 hover:text-white transition-colors duration-300"
             >
               <FaFileDownload className="mr-2" />
