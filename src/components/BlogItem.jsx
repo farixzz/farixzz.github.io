@@ -5,7 +5,7 @@ const BlogItem = ({ title, description, url }) => {
   return (
     <a 
       href={url} 
-      target="_blank" 
+      target="_blank"
       rel="noopener noreferrer" 
       className="block bg-gray-900 border-2 border-gray-700 p-6 rounded-lg transform hover:scale-105 hover:border-green-500 transition-all duration-300 group"
     >
