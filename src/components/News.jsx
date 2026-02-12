@@ -7,7 +7,7 @@ const News = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiKey = import.meta.env.VITE_GNEWS_API_KEY;
+      const apiKey = import.meta.env.VITE_NEWS_API_KEY;
       if (!apiKey) {
         setError('GNews API key is missing. Please add it to your GitHub Secrets.');
         setLoading(false);

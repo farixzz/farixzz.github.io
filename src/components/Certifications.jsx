@@ -22,6 +22,16 @@ const certifications = [
     issuer: 'Professional Training Program',
     description: 'Specialized training in leveraging Python for automating security tasks, script development for pentesting, and data analysis in a security context.',
   },
+  {
+    title: 'Introduction to Linux (LFS101)',
+    issuer: 'The Linux Foundation',
+    description: 'Comprehensive foundation in Linux system administration, command-line operations, and Red Hat Linux environments. Credential ID: LF-sfnhhe41f8.',
+  },
+  {
+    title: 'Introduction to AWS WAF',
+    issuer: 'AWS Training Online',
+    description: 'Training in web application security using AWS Web Application Firewall, covering threat mitigation, rule configuration, and cloud-based security best practices.',
+  },
 ];
 
 const Certifications = () => {

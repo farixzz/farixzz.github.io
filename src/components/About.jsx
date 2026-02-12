@@ -53,7 +53,7 @@ const About = () => {
           </div>
           <div className="mt-4 text-center w-full p-2 bg-gray-900 border border-gray-700">
             <p className="text-lg text-green-400 font-bold tracking-widest">STATUS: ACTIVE</p>
-            <p className="text-sm text-gray-400">// CLASS: ETHICAL HACKER</p>
+            <p className="text-sm text-gray-400">// CLASS: CEH v13-AI | PENTESTER</p>
           </div>
         </div>
 
@@ -61,7 +61,7 @@ const About = () => {
         <div className="md:col-span-2">
           <h2 className="text-2xl font-bold text-gray-200 mb-4">&gt; PSYCHE & METHODOLOGY_</h2>
           <p className="text-gray-300 mb-6">
-            Certified Ethical Hacker and Web Developer with expertise in offensive security, exploit development, and risk management. Skilled in Python automation to optimize security testing and experienced in building responsive web applications using React, Vite, and Bootstrap. Passionate about cyber threat analysis and strengthening security through both offensive and defensive strategies.
+            Certified Ethical Hacker (CEH v13-AI) and Full Stack Developer specializing in penetration testing, VAPT analysis, and Python security tooling. Experienced in offensive security, exploit development, and risk management. Skilled in building responsive web applications using React, Vite, and modern frameworks. Passionate about cyber threat analysis and strengthening security through both offensive and defensive strategies.
           </p>
 
           <h3 className="text-xl font-bold text-gray-200 mb-4">&gt; CORE DIRECTIVES_</h3>
