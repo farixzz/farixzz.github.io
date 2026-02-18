@@ -127,7 +127,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-600 text-xs">
-            <span className="text-green-500/40">©</span> {currentYear} Muhammed Faris. All rights reserved.
+            <span className="text-green-500/40">© {new Date().getFullYear()}</span> Muhammed Faris. All rights reserved.
           </p>
           <p className="text-gray-700 text-xs font-mono">
             <span className="text-green-500/30">$</span> echo "Thanks for visiting"_
